@@ -8,17 +8,13 @@ import requests
 def index(request):
     load_dotenv()
     api = os.getenv("API_KEY")
-    url = f"http://api.weatherapi.com/v1/current.json?key={api}&q=London&aqi=yes"
-    
-    city_weather = requests.get(url).json()
-    print(city_weather)
 
     weather = {
-        'city' : city_weather['location']['name'],
-        'temperature' : city_weather['current']['temp_f'],
-        'description' : city_weather['current']['condition']['text'],
-        'icon' : city_weather['current']['condition']['icon'],
-        'aqi' : city_weather['current']['air_quality']['us-epa-index']
+        'city' : "City: ?",
+        'temperature' : "?",
+        'description' : "Condition: ?",
+        'icon' : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png",
+        'aqi' : "?"
     }
 
     if request.method == "POST":
