@@ -15,7 +15,7 @@ def index(request):
         'description' : "Condition: ?",
         'icon' : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png",
         'aqi' : "?"
-    }
+    }   
 
     if request.method == "POST":
         city = request.POST['city']
@@ -33,5 +33,5 @@ def index(request):
         return render(request, "simplihacks/index.html", weather)
 
     else:
-        return render(request, "simplihacks/index.html", weather)
+        return render(request, "simplihacks/home.html", weather)
     
