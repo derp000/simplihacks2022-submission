@@ -8,8 +8,16 @@ import requests
 def index(request):
     load_dotenv()
     api = os.getenv("API_KEY")
-    url = f"http://api.weatherapi.com/v1/current.json?key={api}&q=London&aqi=no"
+    url = f"http://api.weatherapi.com/v1/current.json?key={api}&q=London&aqi=yes"
     
-    print(requests.get(url).json())
+    city_weather = requests.get(url).json()
+    print(city_weather)
 
-    return render(request, "simplihacks/index.html")
+    weather = {
+        'city' : city_weather['location']['name'],
+        'temperature' : city_weather['current']['temp_f'],
+        'description' : city_weather['current']['condition']['text'],
+        'icon' : city_weather['current']['condition']['icon']
+    }
+
+    return render(request, "simplihacks/index.html", weather)

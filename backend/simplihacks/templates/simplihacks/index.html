@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +11,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    What's the weather like?
+                    SimpliHacks
                 </h1>
             </div>
         </div>
@@ -45,16 +44,16 @@
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image is-50x50">
-                                    <img src="http://openweathermap.org/img/w/10d.png" alt="Image">
+                                    <img src= {{ icon }} alt="Image">
                                 </figure>
                             </div>
                             <div class="media-content">
                                 <div class="content">
                                     <p>
-                                        <span class="title">Las Vegas</span>
+                                        <span class="title">{{ city }}</span>
                                         <br>
-                                        <span class="subtitle">29° F</span>
-                                        <br> thunderstorm with heavy rain
+                                        <span class="subtitle">{{ temperature }}</span>
+                                        <br> {{ description }}
                                     </p>
                                 </div>
                             </div>
