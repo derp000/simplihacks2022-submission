@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from dotenv import load_dotenv
 import os
 import requests
+from .forms import NameForm
 
 # Create your views here.
 def index(request):
@@ -20,4 +21,14 @@ def index(request):
         'icon' : city_weather['current']['condition']['icon']
     }
 
-    return render(request, "simplihacks/index.html", weather)
+    form = None
+
+    if request.method == "POST":
+        form = NameForm(request.POST)
+        if form.is_valid():
+            print("YAYAYAYAYAYAYYAYAYAY")
+
+    else:
+        form = NameForm()
+
+    return render(request, "simplihacks/index.html", weather, {"form" : form})

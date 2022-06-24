@@ -20,17 +20,10 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
-                    <form method="POST">
-                        <div class="field has-addons">
-                            <div class="control is-expanded">
-                                <input class="input" type="text" placeholder="City Name">
-                            </div>
-                            <div class="control">
-                                <button class="button is-info">
-                                    Add City
-                                </button>
-                            </div>
-                        </div>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="Submit">
                     </form>
                 </div>
             </div>
@@ -44,7 +37,7 @@
                         <article class="media">
                             <div class="media-left">
                                 <figure class="image is-50x50">
-                                    <img src= {{ icon }} alt="Image">
+                                    <img src={{ icon }} alt="Image">
                                 </figure>
                             </div>
                             <div class="media-content">
