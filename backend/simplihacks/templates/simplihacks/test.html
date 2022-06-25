@@ -57,12 +57,9 @@
         <section class="features-icons bg-light text-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Climate_change_in_New_York_City" height="700px" width="100%"></iframe>
-                    </div>
                     <div class="col-lg-4">
                         <img src={{ icon }} alt="Image" width="100" height="100">
-                        <p>
+                        <p class="lead mb-0">
                             <span class="title">{{ city }}</span>
                             <br>
                             <span class="subtitle">Temperature (F): {{ temperature }}</span>
@@ -72,6 +69,10 @@
                             <br>
                         </p>
                     </div>
+                    <div class="col-lg-8">
+                        <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Climate_change_in_New_York_City" height="700px" width="100%"></iframe>
+                    </div>
+
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-newspaper m-auto text-primary"></i></div>
