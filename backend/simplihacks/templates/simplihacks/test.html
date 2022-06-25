@@ -69,6 +69,24 @@
                             <br>
                             <span class = "carbonMonoxideLevels" style = "font-size: 35px">CO Levels: {{ carbonMonoxideLevels }}</span>
                             <br>
+                            {% if aqi == 1 %}
+                                <div class = "alert alert-success" role = "alert">Your air quality is normal. Feel free to go outside and enjoy the day!</div>
+                            {% endif %}
+                            {% if aqi == 2 %}
+                                <div class = "alert alert-success" role = "alert">Your air quality is relatively normal. Feel free to go outside and enjoy the day!</div>
+                            {% endif %}
+                            {% if aqi == 3 %}
+                                <div class = "alert alert-warning" role = "alert">Your air quality is slightly unsafe. It is safe to go outside, but you may experience some discomfort.</div>
+                            {% endif %}
+                            {% if aqi == 4 %}
+                                <div class = "alert alert-warning" role = "alert">Your air quality is slightly unsafe. It is safe to go outside, but you may experience some discomfort.</div>
+                            {% endif %}
+                            {% if aqi == 5 %}
+                                <div class = "alert alert-danger" role = "alert">Your air quality is dangerous. Please consider staying inside, especially if you have respiratory illnesses.</div>
+                            {% endif %}
+                            {% if aqi == 6 %}
+                                <div class = "alert alert-danger" role = "alert">Your air quality is very dangerous. Please consider staying inside.</div>
+                            {% endif %}
                         </p>
                     </div>
                     <div class="col-lg-8">
