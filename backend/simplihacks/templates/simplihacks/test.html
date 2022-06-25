@@ -60,26 +60,18 @@
                     <div class="col-lg-4">
                         <img src={{ icon }} alt="Image" width="100" height="100">
                         <p class="lead mb-0">
-                            <span class="title">{{ city }}</span>
+                            <span class="title" style="font-size: 50px">{{ city }}</span>
                             <br>
-                            <span class="subtitle">Temperature (F): {{ temperature }}</span>
-                            <br> {{ description }}
+                            <span class="subtitle" style="font-size: 50px">{{ temperature }}°F</span>
+                            <br> <span style="font-size: 50px">{{ description }}</span>
                             <br>
-                            <span class="aqi">Air Quality: {{ aqi }}</span>
+                            <span class="aqi" style="font-size: 50px">Air Quality: {{ aqi }}</span>
                             <br>
                         </p>
                     </div>
                     <div class="col-lg-8">
                         <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/Climate_change_in_{{ city }}" height="700px" width="100%"></iframe>
 
-                    </div>
-
-                    <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <div class="features-icons-icon d-flex"><i class="bi-newspaper m-auto text-primary"></i></div>
-                            <h3>News</h3>
-                            <p class="lead mb-0">Read news articles about the environment in your city</p>
-                        </div>
                     </div>
                 </div>
             </div>
