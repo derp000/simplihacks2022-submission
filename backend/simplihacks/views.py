@@ -31,7 +31,7 @@ def index(request):
         }
 
         # return render(request, "simplihacks/index.html", weather)
-        return render(request, "simplihacks/webpacktest.html", weather)
+        return render(request, "simplihacks/test.html", weather)
 
 
     else:
