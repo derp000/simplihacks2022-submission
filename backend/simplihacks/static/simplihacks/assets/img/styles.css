@@ -15,6 +15,10 @@
   background-image: url('bg-showcase-1.jpg')
 }
 
+.header-bg-1::before {
+    background-image: url('bg-showcase-2.jpg');
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11305,15 +11309,14 @@ textarea.form-control-lg {
   font-size: 4.5rem;
 }
 
-header.masthead {
+.masthead::before {
+  background: url("bg-showcase-2.jpg");
   position: relative;
-  background-color: #343a40;
-  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-header.masthead:before {
+/* header.masthead:before {
   content: "";
   position: absolute;
   background-color: #1c375e;
@@ -11322,7 +11325,7 @@ header.masthead:before {
   top: 0;
   left: 0;
   opacity: 0.5;
-}
+} */
 header.masthead h1, header.masthead .h1 {
   font-size: 2rem;
 }
