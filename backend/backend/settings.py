@@ -118,9 +118,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# BASE_DIR is same location as manage.py (outer backend folder)
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    BASE_DIR / "simplihacks/static/simplihacks/",
+    BASE_DIR / "simplihacks/static/simplihacks",
 ]
 
 # Default primary key field type
