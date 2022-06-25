@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var thre
   \****************************************/
 /***/ ((module) => {
 
-eval("module.exports = \"varying vec3 vertexNormal;\\nvoid main() {\\n\\tfloat intensity = pow(0.5 - dot(vertexNormal, vec3(0.0, 0.0, 1.0)), 2.0);\\n\\tvec3 atmosphere = vec3(0.1, 0.98, 0.75) * pow(intensity, 1.5);\\n\\tgl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;\\n}\\n\"\n\n//# sourceURL=webpack://backend/./assets/atmosphereFragment.glsl?");
+eval("module.exports = \"varying vec3 vertexNormal;\\nvoid main() {\\n\\tfloat intensity = pow(0.8 - dot(vertexNormal, vec3(0.0, 0.0, 1.0)), 2.0);\\n\\tvec3 atmosphere = vec3(0.1, 0.98, 0.75) * pow(intensity, 1.5);\\n\\tgl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;\\n}\\n\"\n\n//# sourceURL=webpack://backend/./assets/atmosphereFragment.glsl?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("module.exports = \"varying vec3 vertexNormal;\\nvoid main() {\\n\\tfloat i
   \**************************************/
 /***/ ((module) => {
 
-eval("module.exports = \"varying vec3 vertexNormal;\\nvoid main() {\\n\\tvertexNormal = normal;\\n\\tgl_Position = (projectionMatrix * modelViewMatrix) * vec4(position, 1.0);\\n}\\n\"\n\n//# sourceURL=webpack://backend/./assets/atmosphereVertex.glsl?");
+eval("module.exports = \"varying vec3 vertexNormal;\\nvoid main() {\\n\\tvertexNormal = normalize(normalMatrix * normal);\\n\\tgl_Position = (projectionMatrix * modelViewMatrix) * vec4(position, 1.0);\\n}\\n\"\n\n//# sourceURL=webpack://backend/./assets/atmosphereVertex.glsl?");
 
 /***/ }),
 
@@ -56,7 +56,7 @@ eval("module.exports = \"uniform sampler2D globeTexture;\\nvarying vec2 vertexUV
   \****************************/
 /***/ ((module) => {
 
-eval("module.exports = \"varying vec2 vertexUV;\\nvarying vec3 vertexNormal;\\nvoid main() {\\n\\tvertexUV = uv;\\n\\tvertexNormal = normal;\\n\\tgl_Position = (projectionMatrix * modelViewMatrix) * vec4(position, 1.0);\\n}\\n\"\n\n//# sourceURL=webpack://backend/./assets/vertex.glsl?");
+eval("module.exports = \"varying vec2 vertexUV;\\nvarying vec3 vertexNormal;\\nvoid main() {\\n\\tvertexUV = uv;\\n\\tvertexNormal = normalize(normalMatrix * normal);\\n\\tgl_Position = (projectionMatrix * modelViewMatrix) * vec4(position, 1.0);\\n}\\n\"\n\n//# sourceURL=webpack://backend/./assets/vertex.glsl?");
 
 /***/ }),
 
