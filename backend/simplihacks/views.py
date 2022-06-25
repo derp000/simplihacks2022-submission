@@ -20,6 +20,7 @@ def index(request):
     if request.method == "POST":
         city = request.POST['city']
         url = f"http://api.weatherapi.com/v1/current.json?key={api}&q={city}&aqi=yes"
+        wikiUrl = f"http://"
         city_weather = requests.get(url).json()
 
         weather = {
