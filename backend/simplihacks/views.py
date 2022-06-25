@@ -22,15 +22,21 @@ def index(request):
         url = f"http://api.weatherapi.com/v1/current.json?key={api}&q={city}&aqi=yes"
         city_weather = requests.get(url).json()
 
+        if city_weather['current']['air_quality']['us-epa-index']:
+            show_aqi=True
+        else:
+            show_aqi=False
+
         weather = {
         'city' : city_weather['location']['name'],
         'temperature' : city_weather['current']['temp_f'],
         'description' : city_weather['current']['condition']['text'],
         'icon' : city_weather['current']['condition']['icon'],
-        'aqi' : city_weather['current']['air_quality']['us-epa-index']
+        'aqi' : city_weather['current']['air_quality']['us-epa-index'],
+        'show_aqi': show_aqi,
+        'aqi_text': "awe8ifja98we89faw98eujf8"
         }
 
-        # return render(request, "simplihacks/index.html", weather)
         return render(request, "simplihacks/test.html", weather)
 
 
