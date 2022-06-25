@@ -7,10 +7,13 @@ console.log(baseUrl);
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({
+  antialias: true
+});
 
 // window.innerWidth is implied
 renderer.setSize(innerWidth, innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
 // inject renderer into html
 document.body.appendChild(renderer.domElement);
 
@@ -22,14 +25,14 @@ document.body.appendChild(renderer.domElement);
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(5, 50, 50),
   new THREE.MeshBasicMaterial({ 
-    map: new THREE.TextureLoader().load("/static/simplihacks/globe.jpeg")
+    map: new THREE.TextureLoader().load("/static/simplihacks/globeUV.jpeg")
   })
  );
 
 console.log()
 
 scene.add(sphere);
-camera.position.z = 10;
+camera.position.z = 15;
 
 function animate() {
   requestAnimationFrame(animate);
