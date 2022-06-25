@@ -10,15 +10,6 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
-.bg-image-1 {
-  background-image: url('bg-showcase-1.jpg')
-}
-
-.header-bg-1::before {
-    background-image: url('bg-showcase-2.jpg');
-}
-
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -604,7 +595,7 @@ progress {
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -11309,23 +11300,25 @@ textarea.form-control-lg {
   font-size: 4.5rem;
 }
 
-.masthead::before {
-  background: url("bg-showcase-2.jpg");
+header.masthead {
   position: relative;
+  background-color: #343a40;
+  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-/* header.masthead:before {
+header.masthead:before {
   content: "";
   position: absolute;
   background-color: #1c375e;
+  background: url("../img/bg-masthead.jpg") no-repeat center center;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
   opacity: 0.5;
-} */
+}
 header.masthead h1, header.masthead .h1 {
   font-size: 2rem;
 }

@@ -35,5 +35,5 @@ def index(request):
 
 
     else:
-        return render(request, "simplihacks/home.html", weather)        
+        return render(request, "simplihacks/home.html", weather)
     
