@@ -30,8 +30,10 @@ def index(request):
         'aqi' : city_weather['current']['air_quality']['us-epa-index']
         }
 
-        return render(request, "simplihacks/index.html", weather)
+        # return render(request, "simplihacks/index.html", weather)
+        return render(request, "simplihacks/webpacktest.html", weather)
+
 
     else:
-        return render(request, "simplihacks/home.html", weather)
+        return render(request, "simplihacks/home.html", weather)        
     

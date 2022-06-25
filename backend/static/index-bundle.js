@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./backend/assets/index.js":
-/*!*********************************!*\
-  !*** ./backend/assets/index.js ***!
-  \*********************************/
+/***/ "./assets/index.js":
+/*!*************************!*\
+  !*** ./assets/index.js ***!
+  \*************************/
 /***/ (() => {
 
-eval("function component() {\r\n    const element = document.createElement('div');\r\n    element.innerHTML = 'Hello webpack';\r\n    return element;\r\n  }\r\n  document.body.appendChild(component());\n\n//# sourceURL=webpack://simplihacks2022-submission/./backend/assets/index.js?");
+eval("function component() {\r\n    const element = document.createElement('div');\r\n    element.innerHTML = 'Hello webpack';\r\n    return element;\r\n  }\r\n  document.body.appendChild(component());\n\n//# sourceURL=webpack://backend/./assets/index.js?");
 
 /***/ })
 
@@ -26,7 +26,7 @@ eval("function component() {\r\n    const element = document.createElement('div'
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./backend/assets/index.js"]();
+/******/ 	__webpack_modules__["./assets/index.js"]();
 /******/ 	
 /******/ })()
 ;
