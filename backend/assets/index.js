@@ -1,6 +1,8 @@
 import * as THREE from "three";
 import vertexShader from ".//vertex.glsl";
 import fragmentShader from ".//fragment.glsl";
+import atmosphereVertexShader from ".//atmosphereVertex.glsl";
+import atmosphereFragmentShader from ".//atmosphereFragment.glsl";
 
 console.log(fragmentShader);
 
@@ -39,13 +41,26 @@ const sphere = new THREE.Mesh(
   })
  );
 
-console.log()
+ // create atmosphere
+ const atmosphere = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 50, 50),
+  new THREE.ShaderMaterial({ 
+    vertexShader: atmosphereVertexShader,
+    fragmentShader: atmosphereFragmentShader,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide
+  })
+ );
+
+ atmosphere.scale.set(1.1, 1.1, 1.1);
 
 scene.add(sphere);
+scene.add(atmosphere);
 camera.position.z = 15;
 
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  sphere.rotation.y += 0.001;
 }
 animate();
