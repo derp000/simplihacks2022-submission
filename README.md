@@ -1,7 +1,7 @@
 # simplihacks2022-submission
 
 ## **NOTE: PERCENTAGE OF PROJECT IN CSS IS OVERINFLATED**
-- **we downloaded the entire Bootstrap css library into one css file and did all of our styling in that `styles.css` file**
+- **we downloaded the entire Bootstrap css library into one css file and did all of our styling in that (11,000+ line) `styles.css` file**
 - sorry we're beginners in web dev :(
 
 ## Inspiration
