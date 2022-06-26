@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import os
 import requests
 from serpapi import GoogleSearch
+import json
 
 def index(request):
     load_dotenv()
@@ -31,9 +32,15 @@ def index(request):
         search = GoogleSearch(params)
         results = search.get_dict()
 
+        with open("simplihacks/static/simplihacks/assets/data.json", "r") as f:
+            thing=json.loads(f.read())
+
+        index = next((index for (index, d) in enumerate(thing) if d["country"] == city_weather['location']['country']), None)
+
         weather = {
         'city' : city_weather['location']['name'],
         'country': city_weather['location']['country'],
+        'index' : index+1,
         'temperature' : city_weather['current']['temp_f'],
         'description' : city_weather['current']['condition']['text'],
         'icon' : city_weather['current']['condition']['icon'],

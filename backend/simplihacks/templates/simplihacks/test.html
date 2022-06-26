@@ -60,6 +60,8 @@
                             <br>
                             <span class = "carbonMonoxideLevels" style = "font-size: 35px">CO Levels: {{ carbonMonoxideLevels }}</span>
                             <br>
+                            <span class="aqi" style= "font-size: 35px"> Carbon Footprint Rank: {{ index }}</span>
+                            <br>
                             {% if aqi == 1 or aqi == 2 %}
                                 <div class = "alert alert-success" role = "alert">Your air quality is normal. Feel free to go outside and enjoy the day!</div>
                             {% endif %}
@@ -128,7 +130,7 @@
                     <div class="col-lg-4">
                         <h1>Learn More</h1>
                         <p style="font-size: 25px;">Learn about climate events in this region and how to support relief efforts.</p>
-                        <h1>Resources</h1>
+                        <h1>Organizations</h1>
                         <ul style="list-style: none; font-size: 25px;">
                             <li>
                                  <a href="https://www.redcross.org/about-us/our-work/disaster-relief.html">Red Cross</a>
