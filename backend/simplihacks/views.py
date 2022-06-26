@@ -38,7 +38,13 @@ def index(request):
         'icon' : city_weather['current']['condition']['icon'],
         'aqi' : city_weather['current']['air_quality']['us-epa-index'],
         'carbonMonoxideLevels' : str(round(city_weather['current']['air_quality']['co'], 2)),
-        'website_url' : results['organic_results'][0]['link']
+        'website_url' : results['organic_results'][0]['link'],
+        'website_2_url' : results['organic_results'][1]['link'],
+        'website_2' : results['organic_results'][1]['title'],
+        'website_3_url' : results['organic_results'][2]['link'],
+        'website_3' : results['organic_results'][2]['title'],
+        'website_4_url' : results['organic_results'][3]['link'],
+        'website_4' : results['organic_results'][3]['title']
         }
 
         return render(request, "simplihacks/test.html", weather)
