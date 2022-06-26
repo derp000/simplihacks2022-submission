@@ -1,5 +1,9 @@
 # simplihacks2022-submission
 
+## **NOTE: PERCENTAGE OF PROJECT IN CSS IS OVERINFLATED**
+- **we downloaded the entire Bootstrap css library into one css file and did all of our styling in that `styles.css` file**
+- sorry we're beginners in web dev :(
+
 ## Inspiration
 With so many crazy events in the world—from the pandemic, to inflation, to wars—it's easy to forget what we take for granted: Earth. Over the past few years, there have been increasingly more devastating and fluctuating weather events, whether it be fierce storms or scorching drought. Just last week, we saw record high-temperature heatwaves hit regions all across the globe, including Europe, Asia, and North America. In fact, according to the UN, we must reduce our carbon emissions by over 7% each year by 2030 to stop global temperature from rising 1.5 degrees Celsius over pre-industrial temperatures. Therefore, we were inspired to create WikiEnv to educate people on how climate change affects places worldwide and empower them to stop it.
 
