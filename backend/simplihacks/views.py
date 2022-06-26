@@ -8,6 +8,7 @@ from serpapi import GoogleSearch
 def index(request):
     load_dotenv()
     api = os.getenv("API_KEY")
+    google_api=os.getenv("GOOGLE_API_KEY")
 
     weather = {
         'city' : "City: ?",
@@ -24,7 +25,7 @@ def index(request):
         city_weather = requests.get(url).json()
         params = {
         "q": f"{city_weather['location']['name']} relief organizations",
-        "api_key": "5f87f687f7a29a67ea2ac5c1d29ef7567c5600de3c08aadbb2736bdbcd684d40"
+        "api_key": google_api
         }
 
         search = GoogleSearch(params)
