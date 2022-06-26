@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from dotenv import load_dotenv
 import os
 import requests
+from serpapi import GoogleSearch
 
-# Create your views here.
 def index(request):
     load_dotenv()
     api = os.getenv("API_KEY")
@@ -22,6 +22,13 @@ def index(request):
         url = f"http://api.weatherapi.com/v1/current.json?key={api}&q={city}&aqi=yes"
         wikiUrl = f"https://en.wikipedia.org/w/api.php?action=parse&page=Climate_change_in_{city}&format=json"
         city_weather = requests.get(url).json()
+        params = {
+        "q": f"{city_weather['location']['name']} relief organizations",
+        "api_key": "5f87f687f7a29a67ea2ac5c1d29ef7567c5600de3c08aadbb2736bdbcd684d40"
+        }
+
+        search = GoogleSearch(params)
+        results = search.get_dict()
 
         weather = {
         'city' : city_weather['location']['name'],
@@ -30,10 +37,10 @@ def index(request):
         'description' : city_weather['current']['condition']['text'],
         'icon' : city_weather['current']['condition']['icon'],
         'aqi' : city_weather['current']['air_quality']['us-epa-index'],
-        'carbonMonoxideLevels' : str(round(city_weather['current']['air_quality']['co'], 2))
+        'carbonMonoxideLevels' : str(round(city_weather['current']['air_quality']['co'], 2)),
+        'website_url' : results['organic_results'][0]['link']
         }
 
-        # return render(request, "simplihacks/index.html", weather)
         return render(request, "simplihacks/test.html", weather)
 
 
