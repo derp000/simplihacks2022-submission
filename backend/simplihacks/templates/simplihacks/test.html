@@ -72,9 +72,22 @@
                             {% if aqi == 6 %}
                                 <div class = "alert alert-danger" role = "alert">Your air quality is very dangerous. Please consider staying inside.</div>
                             {% endif %}
-                            {% if aqi > 4 %}
+                            {% if aqi > 2 %}
                                 <h1>Environment Tips</h1>
-
+                                <ul style="list-style: none; font-size: 20px;">
+                                    <li>
+                                        Limit consumption of meat
+                                    </li>
+                                    <li>
+                                        Use public transportation
+                                    </li>
+                                    <li>
+                                        Take short showers
+                                    </li>
+                                    <li>
+                                        Turn off lights when they are not being used
+                                    </li>
+                                </ul>
                             {% endif %}
                         </p>
                     </div>
@@ -106,20 +119,15 @@
                     <div class="col-lg-8">
                         {% if country == "India" %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/2022-south-asian-floods/" height="700px" width="100%"></iframe>
-                        {% endif %}
-                        {% if country == "United States of America" %}
+                        {% elif country == "United States of America" %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/2022-north-american-wildfires/" height="700px" width="100%"></iframe>
-                        {% endif %}
-                        {% if country == "Australia" %}
+                        {% elif country == "Australia" %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/2022-australian-flooding/" height="700px" width="100%"></iframe>
-                        {% endif %}
-                        {% if country == "Brazil" %}
+                        {% elif country == "Brazil" %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/2022-brazil-mudslides/" height="700px" width="100%"></iframe>
-                        {% endif %}
-                        {% if country == "South Korea" %}
+                        {% elif country == "South Korea" %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/south-korean-wildfires/" height="700px" width="100%"></iframe>
-                        {% endif %}
-                        {% if country == "Indonesia" %}
+                        {% elif country == "Indonesia" %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/mount-semeru-eruption-indonesia/" height="700px" width="100%"></iframe>
                         {% else %}
                             <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/" height="700px" width="100%"></iframe>
