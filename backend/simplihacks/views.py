@@ -29,7 +29,7 @@ def index(request):
         'description' : city_weather['current']['condition']['text'],
         'icon' : city_weather['current']['condition']['icon'],
         'aqi' : city_weather['current']['air_quality']['us-epa-index'],
-        'carbonMonoxideLevels' : city_weather['current']['air_quality']['co']
+        'carbonMonoxideLevels' : str(round(city_weather['current']['air_quality']['co'], 2))
         }
 
         # return render(request, "simplihacks/index.html", weather)
