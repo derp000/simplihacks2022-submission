@@ -82,11 +82,29 @@
                     </div>
                     <div class="col-lg-8">
                         <iframe class="embed-responsive-item" src="https://en.wikipedia.org/wiki/{{ city }}#Climate" height="700px" width="100%"></iframe>
-
                     </div>
                 </div>
             </div>
-        </header>
+        </section>
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h1>Learn More</h1>
+                        <p style="font-size: 25px;">Learn about climate events in this region and how to support relief efforts.</p>
+                    </div>
+                    <div class="col-lg-8">
+                        {% if country == "India" %}
+                            <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/2022-south-asian-floods/" height="700px" width="100%"></iframe>
+                        {% endif %}
+                        {% if country == "United States of America" %}
+                            <iframe class="embed-responsive-item" src="https://disasterphilanthropy.org/disasters/2022-north-american-wildfires/" height="700px" width="100%"></iframe>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

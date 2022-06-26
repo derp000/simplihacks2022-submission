@@ -25,6 +25,7 @@ def index(request):
 
         weather = {
         'city' : city_weather['location']['name'],
+        'country': city_weather['location']['country'],
         'temperature' : city_weather['current']['temp_f'],
         'description' : city_weather['current']['condition']['text'],
         'icon' : city_weather['current']['condition']['icon'],
