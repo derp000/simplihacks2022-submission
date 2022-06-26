@@ -60,16 +60,10 @@
                             <br>
                             <span class = "carbonMonoxideLevels" style = "font-size: 35px">CO Levels: {{ carbonMonoxideLevels }}</span>
                             <br>
-                            {% if aqi == 1 %}
+                            {% if aqi == 1 or aqi == 2 %}
                                 <div class = "alert alert-success" role = "alert">Your air quality is normal. Feel free to go outside and enjoy the day!</div>
                             {% endif %}
-                            {% if aqi == 2 %}
-                                <div class = "alert alert-success" role = "alert">Your air quality is relatively normal. Feel free to go outside and enjoy the day!</div>
-                            {% endif %}
-                            {% if aqi == 3 %}
-                                <div class = "alert alert-warning" role = "alert">Your air quality is slightly unsafe. It is safe to go outside, but you may experience some discomfort.</div>
-                            {% endif %}
-                            {% if aqi == 4 %}
+                            {% if aqi == 3 or aqi == 4 %}
                                 <div class = "alert alert-warning" role = "alert">Your air quality is slightly unsafe. It is safe to go outside, but you may experience some discomfort.</div>
                             {% endif %}
                             {% if aqi == 5 %}
@@ -77,6 +71,10 @@
                             {% endif %}
                             {% if aqi == 6 %}
                                 <div class = "alert alert-danger" role = "alert">Your air quality is very dangerous. Please consider staying inside.</div>
+                            {% endif %}
+                            {% if aqi > 4 %}
+                                <h1>Environment Tips</h1>
+
                             {% endif %}
                         </p>
                     </div>
@@ -92,6 +90,18 @@
                     <div class="col-lg-4">
                         <h1>Learn More</h1>
                         <p style="font-size: 25px;">Learn about climate events in this region and how to support relief efforts.</p>
+                        <h1>Resources</h1>
+                        <ul style="list-style: none; font-size: 25px;">
+                            <li>
+                                 <a href="https://www.redcross.org/about-us/our-work/disaster-relief.html">Red Cross</a>
+                            </li>
+                            <li>
+                                <a href="https://www.salvationarmyusa.org/usn/">Salvation Army</a>
+                            </li>
+                            <li>
+                                <a href="https://secure.feedthechildren.org/site/Donation2?1400.donation=form1&df_id=1400">Feed The Children</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-lg-8">
                         {% if country == "India" %}
@@ -116,7 +126,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
