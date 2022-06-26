@@ -1,4 +1,4 @@
-# simplihacks2022-submission
+# WikiEnv - Simplihacks 2022 Submission
 
 ## **NOTE: PERCENTAGE OF PROJECT IN CSS IS OVERINFLATED**
 - **we downloaded the entire Bootstrap css library into one css file and did all of our styling in that (11,000+ line) `styles.css` file**
