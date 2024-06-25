@@ -21,12 +21,12 @@ def index(request):
 
     if request.method == "POST":
         city = request.POST['city']
-        url = f"http://api.weatherapi.com/v1/current.json?key={api}&q={city}&aqi=yes"
+        url = f"http://api.weatherapi.com/v1/current.json?key=a2f76053207b4872884161011242506&q={city}&aqi=yes"
         wikiUrl = f"https://en.wikipedia.org/w/api.php?action=parse&page=Climate_change_in_{city}&format=json"
         city_weather = requests.get(url).json()
         params = {
-        "q": f"{city_weather['location']['name']} relief organizations",
-        "api_key": google_api
+            "q": f"{city_weather['location']['name']} relief organizations",
+            "api_key": google_api
         }
 
         search = GoogleSearch(params)
@@ -40,19 +40,19 @@ def index(request):
         weather = {
         'city' : city_weather['location']['name'],
         'country': city_weather['location']['country'],
-        'index' : index+1,
+        # 'index' : index+1,
         'temperature' : city_weather['current']['temp_f'],
         'description' : city_weather['current']['condition']['text'],
         'icon' : city_weather['current']['condition']['icon'],
         'aqi' : city_weather['current']['air_quality']['us-epa-index'],
         'carbonMonoxideLevels' : str(round(city_weather['current']['air_quality']['co'], 2)),
-        'website_url' : results['organic_results'][0]['link'],
-        'website_2_url' : results['organic_results'][1]['link'],
-        'website_2' : results['organic_results'][1]['title'],
-        'website_3_url' : results['organic_results'][2]['link'],
-        'website_3' : results['organic_results'][2]['title'],
-        'website_4_url' : results['organic_results'][3]['link'],
-        'website_4' : results['organic_results'][3]['title']
+        # 'website_url' : results['organic_results'][0]['link'],
+        # 'website_2_url' : results['organic_results'][1]['link'],
+        # 'website_2' : results['organic_results'][1]['title'],
+        # 'website_3_url' : results['organic_results'][2]['link'],
+        # 'website_3' : results['organic_results'][2]['title'],
+        # 'website_4_url' : results['organic_results'][3]['link'],
+        # 'website_4' : results['organic_results'][3]['title']
         }
 
         return render(request, "simplihacks/test.html", weather)
